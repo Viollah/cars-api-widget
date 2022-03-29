@@ -1,33 +1,48 @@
-document.addEventListener('DOMContentLoaded', function(){
-
-    var carsElem = document.querySelector('.cars');
-
-    fetch("https://api-tutor.herokuapp.com/v1/cars")
-        .then(function(response){
-            return response.json();
-        })
-        .then(function(carData){
-
-            carData.forEach(function(car){
-                var elem = document.createElement('div');
-                elem.classList.add('car');
-                elem.innerHTML = car.color + " " + car.make + " " + car.model;
-                elem.style.backgroundColor = car.color;
-                carsElem.appendChild(elem);
-            });
+const cars = document.querySelector('.cars');
+const colors = document.querySelector('.colors');
+const carbrands = document.querySelector('.brands');
 
 
-        })
-        .catch(function(err){
-            //alert(err);
-            carsElem.innerHTML = err;
-            carsElem.style.backgroundColor = 'Crimson';
+axios
+    .get("https://api-tutor.herokuapp.com/v1/cars")
+    .then(function (result) {
+        result.data.forEach(car => {
+            const li = document.createElement('tr');
+            li.innerHTML = `<tr>
+        <td>${car.make},
+        
+        ${car.model},
+        ${car.color},
+        ${car.price},
+        ${car.reg_number}</td></tr>`
+            cars.appendChild(li);
 
-        })
+        });
 
-        //
+    });
 
+    axios
+    .get("https://api-tutor.herokuapp.com/v1/colors")
+    .then(function (result) {
+        result.data.forEach(color => {
+            const li = document.createElement('tr');
+            li.innerHTML = `<tr>
+        <td>${color}<strong></strong></td></tr>`
+            colors.appendChild(li);
 
+        });
 
+    });
 
-});
+    axios
+    .get("https://api-tutor.herokuapp.com/v1/makes")
+    .then(function (result) {
+        result.data.forEach(carbrand => {
+            const li = document.createElement('tr');
+            li.innerHTML = `<tr>
+        <td>${carbrand}<strong></strong></td></tr>`
+            carbrands.appendChild(li);
+
+        });
+
+    });
