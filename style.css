@@ -1,17 +1,13 @@
 body {
     font-family: Arial;
-    background: powderblue;
+    background-color: powderblue;
 }
 
-.container {
+ul{
     display: list-item;
+  list-style-type: none;
 }
-.cars{
-    display: list-item;
-}
-.colors{
-    display: list-item;
-}
-.brands{
+.list-group-item{
+    background-color: lightgreen;
     display: list-item;
 }
