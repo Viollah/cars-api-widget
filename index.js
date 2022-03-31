@@ -1,48 +1,36 @@
-const cars = document.querySelector('.cars');
 const colors = document.querySelector('.colors');
-const carbrands = document.querySelector('.brands');
+const brand = document.querySelector('.brands');
+const cars = document.querySelector('.cars');
 
+
+
+const colorTemplateText = document.querySelector('.colour');
+const colorTemplate =  Handlebars.compile(colorTemplateText.innerHTML)
+const carsTemplateText = document.querySelector('.display_table');
+const carsTemplate =  Handlebars.compile(carsTemplateText.innerHTML)
 
 axios
-    .get("https://api-tutor.herokuapp.com/v1/cars")
-    .then(function (result) {
-        result.data.forEach(car => {
-            const li = document.createElement('tr');
-            li.innerHTML = `<tr>
-        <td>${car.make},
-        
-        ${car.model},
-        ${car.color},
-        ${car.price},
-        ${car.reg_number}</td></tr>`
-            cars.appendChild(li);
-
-        });
-
+    .get('https://api-tutor.herokuapp.com/v1/cars')
+    .then(function(result){
+        cars.innerHTML = carsTemplate({car: result.data});
+       console.log(result.data);
+       
     });
 
-    axios
-    .get("https://api-tutor.herokuapp.com/v1/colors")
-    .then(function (result) {
-        result.data.forEach(color => {
-            const li = document.createElement('tr');
-            li.innerHTML = `<tr>
-        <td>${color}<strong></strong></td></tr>`
-            colors.appendChild(li);
-
-        });
-
+axios
+    .get('https://api-tutor.herokuapp.com/v1/colors')
+    .then(function(result){
+        colors.innerHTML = colorTemplate({color: result.data});
+       console.log(result.data);
+       
     });
 
-    axios
-    .get("https://api-tutor.herokuapp.com/v1/makes")
-    .then(function (result) {
-        result.data.forEach(carbrand => {
-            const li = document.createElement('tr');
-            li.innerHTML = `<tr>
-        <td>${carbrand}<strong></strong></td></tr>`
-            carbrands.appendChild(li);
-
-        });
-
+axios
+    .get('https://api-tutor.herokuapp.com/v1/makes')
+    .then(function(result){
+        brand.innerHTML = colorTemplate({color: result.data});
+       console.log(result.data);
+       
     });
+
+

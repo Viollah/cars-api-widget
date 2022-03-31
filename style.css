@@ -8,44 +8,54 @@ ul{
   list-style-type: none;
 }
 .list-group-item{
+    text-decoration: none;
     background-color: lightgreen;
     display: list-item;
 }
 .colorFilter{ 
     width:12em;
-    padding: 0.5em;
+    padding-left: 2em;
     border-radius: 1em;
     
 }
 
 .brandsFilter{
     width:12em;
-    padding: 0.5em;
+    padding-left: 2em;
     border-radius: 1em;
     
 }
 .form-select{
     text-align: center;
 }
-
-.search{
-    width: 8%;
-    padding-top: 1%;
+.search-btn{
+    padding-top: 2%;
     padding-bottom: 1%;
-    background-color: bisque;
-    border-radius: 1em;
-    text-align: center;
-
+    padding-left: 2em;
 }
 
-.search-result{
+.search{
+    background-color: bisque;
+    
+}
+
+.results{
+    padding-left: 2em;
     display: list-item;
 }
 .header{
     text-align: center;
 }
+
 .navigation{
+    padding-left: 1em;
+    padding-top: 1%;
+    
+}
+.contain{
+    background-color: lightcyan;
+    width: 10em;
+    height: 3em;
     text-decoration: none;
-    padding-right: 30%;
-    padding-top: 5%;
+    
 }

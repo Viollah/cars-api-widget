@@ -12,7 +12,7 @@
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js" integrity="sha256-S1J4GVHHDMiirir9qsXWc8ZWw74PHHafpsHp5PXtjTs=" crossorigin="anonymous"></script>
 
-	<script type="template-x" class="filterTemplate">
+	<script type="template-x" class="filter_Template">
 		<option value="{{this}}"></option>
 		{{#each filter}}
                 <option value="{{this}}">{{this}}</option>
@@ -52,11 +52,42 @@
 	
 
 	</script>
+	<style>
+		table {
+			border-collapse: collapse;
+		}
+		th {
+			Color:black;
+		}
+		th, td {
+			width:150px;
+			text-align:center;
+			border:1px solid black;
+			padding:5px
+		  
+		}
+		.geeks {
+			border-right:hidden;
+		}
+		.gfg {
+			border-collapse:separate;
+			border-spacing:0 15px;
+		}
+		
+	</style>
 
 </head>
 <body>
-	<a href="index.html" class="navigation" >index html</a>
-	<a href="cars.html" class="navigation" >cars html</a>
+	
+	<ul class="nav justify-content-start">
+		<li class="navigation">
+			<a href="index.html" class=" btn contain"  role="button" tabindex="-1">index html</a>
+		</li>
+		<li class="navigation">
+			<a href="cars.html" class=" btn contain" role="button" tabindex="-1" >cars html</a>
+		</li>
+		
+	  </ul>
 
     <div >
 	<div class="row">
@@ -87,7 +118,7 @@
 
 		<div class="row">
 
-			<div class="search-result">
+			<div class="results">
 		
 			</div>
 		</div>
