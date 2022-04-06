@@ -32,5 +32,3 @@ axios
        console.log(result.data);
        
     });
-
-

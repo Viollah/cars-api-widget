@@ -16,13 +16,14 @@ ul{
     width:12em;
     padding-left: 2em;
     border-radius: 1em;
-    
+    padding-bottom: 1em;
 }
 
 .brandsFilter{
     width:12em;
     padding-left: 2em;
     border-radius: 1em;
+    padding-bottom: 1em;
     
 }
 .form-select{
@@ -35,7 +36,9 @@ ul{
 }
 
 .search{
+    margin: 10px;
     background-color: bisque;
+    padding-bottom: 12px;
     
 }
 
